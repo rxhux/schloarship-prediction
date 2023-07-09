@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ScholarToday</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" type = "text/css"href="{{url_for('static',filename="styles/style.css")}}">
+</head>
+<body>
+  <form action='{{ url_for('predict')}}' method='POST'> 
+	<script src="script.js"></script>
+	<div class="bg-img"></div>
+	<section>
+		<div class="box">
+			<div class="boxContainer">
+				<div class="form">
+					<h2>Prediction</h2>
+          <div class="sidespace">
+            <div class="sidespace1">
+  <p class="sub-head">Education Qualification</p>
+  <select class="form-select" aria-label=".form-select-sm example" style="width: 50vh;height:3.2vh;" name="Education" id='Education'>
+      <option selected>Select</option>
+      <option value="0">Undergraduate</option>
+      <option value="1">Postgraduate</option>
+      <option value="2">Doctrate</option>
+    </select>
+            </div>
+    <div class="sidespace2">
+      <div class="nav">
+    <p class="sub-head">Percentage</p>
+    <select class="form-select" aria-label=".form-select-sm example" style="width: 50vh;height:3.2vh;" name='Percentage' id='Percentage'>
+        <option selected>Select</option>
+        <option value="0">90-100</option>
+        <option value="1">80-90</option>
+        <option value="2">70-80</option>
+        <option value="3">Below 70</option>
+    </select></div>
+    </div>
+          </div>
+
+<div class="sidespace">
+  <div class="sidespace1">
+    <p class="sub-head">Religion</p>
+    <select class="form-select" aria-label=".form-select-sm example" style="width: 50vh;height:3.2vh;" name='Religion' id='Religion'>
+        <option selected>Select</option>
+        <option value="0">Hindu</option>
+        <option value="1">Muslim</option>
+        <option value="2">Christian</option>
+        <option value="3">Others</option>
+    </select>
+  </div>
+<div class="sidespace2">
+  <div class="nav">
+    <p class="sub-head">Community</p>
+    <select class="form-select" aria-label=".form-select-sm example" style="width: 50vh;height:3.2vh;" name='Community' id='Community'>
+        <option selected>Select</option>
+        <option value="0">General</option>
+        <option value="1">OBC</option>
+        <option value="2">SC/ST</option>
+        <option value="3">Minorities</option>
+    </select></div>
+  </div>
+</div>
+
+<div class="sidespace">
+  <div class="sidespace1">
+    <p class="sub-head">Annual Income</p>
+    <select class="form-select" aria-label=".form-select-sm example" style="width: 50vh;height:3.2vh;" name='Income' id='Income'>
+        <option selected>Select</option>
+        <option value="0">Upto 1.5L</option>
+        <option value="1">1.5L to 3L</option>
+        <option value="2">3L to 6L</option>
+        <option value="3">Above 6L</option>
+    </select>
+  </div>
+  <div class="sidespace2">
+    <div class="move1">
+      <div class="nav1">
+    <p class="sub-head ">Gender</p>
+    <div class="sidespace">
+    <div class="sidespace1">
+        <input class="form-check-input" type="radio" name="gender" id="gender-male" value='1'>
+        <label class="form-check-label" for="gender-male" >Male &nbsp;
+          </label>
+      </div>
+  <div class="sidespace2">
+      <input class="form-check-input" type="radio" name="gender" id="gender-female" value='0'>
+      <label class="form-check-label2" for="gender-female" >
+           Female
+      </label>
+    </div>
+  </div></div>
+</div>
+</div>
+</div>
+<div class="move">
+
+    <p class="sub-hea">Is the parent of the applicant an ex-service man?</p>
+    <div class="sidespace">
+        <input class="form-check-input" type="radio" name="Exservice" id="Exservice-yes" value='1'>
+        <label class="form-check-label" for="Exservice-yes">
+            Yes
+          </label>
+      <input class="form-check-input" type="radio" name="Exservice" id="Exservice-no" value='0'>
+      <label class="form-check-label2" for="Exservice-no" >
+        No
+      </label>
+  </div>
+
+
+    <p class="sub-hea">Does the applicant have any disabilities?</p>
+    <div class="sidespace">
+      <input class="form-check-input" type="radio" name="Disability" id="Disability-yes" value='1'>
+      <label class="form-check-label" for="Disability-yes" >
+          Yes
+        </label>
+    <input class="form-check-input" type="radio" name="Disability" id="Disability-no" value='0'>
+    <label class="form-check-label2" for="Disability-no" >
+      No
+    </label>
+    </div>
+
+    <p class="sub-hea">Is the applicant applying through the sports quota?</p>
+    <div class="sidespace">
+    <input class="form-check-input" type="radio" name="Sports" id="Sports-yes" value='1'>
+    <label class="form-check-label" for="Sports-yes" >
+        Yes
+      </label>
+    <input class="form-check-input" type="radio" name="Sports" id="Sports-no" value='0'>
+    <label class="form-check-label2" for="Sports-no" >
+    No
+    </label>
+    </div>
+    <p class="sub-hea">Is the applicant looking for scholarships in India or abroad countries?</p>
+    <div class="sidespace">
+    <input class="form-check-input" type="radio" name="India" id="India-in" value='0'>
+    <label class="form-check-label" for="India-in" >
+        India
+      </label>
+    <input class="form-check-input" type="radio" name="India" id="India-out" value='1'> 
+    <label class="form-check-label2" for="India-out" >
+    Abroad
+    </label>
+    </div>
+  </div>
+  <button class="btn-primary" type="submit" style="width: 50vh;height: 3.3vh;" id="submit">Submit</button>
+</div>
+</div></div>
+</section>
+
+</form>
+</body>
+</body>
+</html>
